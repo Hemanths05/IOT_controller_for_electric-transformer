@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>selection page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  background-color: skyblue;
+  text-align: center;
+  background-image: url("images/34665942_5_123dasa1.jpg");
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size:auto;
+  margin: 0; 
+  padding: 0;
+}
+
+h1 {
+  color: rgb(4, 176, 192);
+  margin-top: 20px; 
+}
+
+p {
+  font-size: 18px;
+  color: white; 
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #333; 
+}
+
+input[type="date"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; /
+}
+
+input[type="password"]:focus{
+  outline: none;
+  border-color: #0066cc; 
+}
+
+input[type="checkbox"] {
+  float: left;
+  margin-right: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(4, 176, 192);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+select {
+  width: 100%;
+  background-color: rgb(4, 176, 192);
+  color: white; 
+  border: none;
+}
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(4, 176, 192);
+  color: white;
+}
+
+select:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+select option {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+p{
+  color: black;
+}
+.image-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%; 
+      background-color: black; 
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1; 
+      height: 1000px;
+      width: 10px;
+    }
+
+    .image-container.right {
+      right: 0;
+      left: initial;
+      background-color: black;
+      height: 1000px; 
+      width: 10px;
+    }
+
+  </style>
+  <script type="text/javascript">
+    function validateForm(){
+let x = document.forms["myForm"]["PIN"].value;
+let y = document.forms["myForm"]["pwd"].value;
+if (x == "") {
+alert("Pin must be filled out");
+return false;
+}
+else if(x=="12345")
+{
+return true;
+}
+else
+{
+alert("Pin is invalid");
+return false;
+}
+}
+function checkform()
+{
+if(validateForm())
+{
+window.location.href = "new.html";
+}
+}
+</script>
+</head>
+<body>
+  <div class="image-container"></div>
+  
+  <div class="image-container right"></div>
+  <h1>TAMILNADU ELECTRIC BOARD</h1>
+  <p>This is the page to rectify your problem:</p>
+<br>
+<br>
+  <form action="/action_page.php" id="carform" name="myForm" onsubmit="return checkform()">
+    <label for="Date">Date:</label>
+    <input type="date" id="Date" name="Date"><br><br>
+    <label for="Pin">PIN NUMBER(Transformer pin):</label>
+    <input type="password" id="PIN" name="PIN" placeholder="******"><br><br>
+  
+  <br>
+
+  <label for="locality">Choose a locality:</label>
+  <select id="locality" name="locality" form="locality">
+    <div class="next">
+      <option value="None">None</option>
+    <option value="A street">A STREET</option>
+    <option value="B street">B STREET</option>
+    <option value="C street">C STREET</option>
+    <option value="D street">D STREET</option>
+  </div>
+  </select>
+
+    <label for="pwd">User password:</label>
+    <input type="password" id="pwd" name="pwd" minlength="8" placeholder="Password"><br><br>
+    
+   <br><button type="button" onclick="checkform()">VERIFY</button>
+  </form>
+</body>
+</html>
